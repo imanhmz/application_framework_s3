@@ -46,3 +46,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: imanhmz/application_framework_s3:latest
+
+      - name: Trigger Render Deploy
+        run: |
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
